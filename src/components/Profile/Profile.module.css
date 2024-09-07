@@ -1,112 +1,59 @@
-:root {
-    --clr-1: #052b2f;
-    --clr-2: #08474d;
-    --clr-3: #0e4b50;
-    --clr-4: #2d8f85;
-    --clr-5: #637c54;
-}
-
-@property --gradient-angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-}
-
-@keyframes rotation {
-    0% {
-        --gradient-angle: 0deg;
-    }
-
-    100% {
-        --gradient-angle: 360deg;
-    }
-}
-
 .profile {
-    display: flex;
-    flex-direction: column;
-    height: 40vh;
-    aspect-ratio: 1 / 1.5;
-    background: var(--clr-1);
-    border-radius: 0.5rem;
-    margin: auto;
+    width: 300px;
+    background-color: #f3f6f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    justify-content: space-between;
-}
-
-.profile {
-    position: relative;
-    top: 10px;
-}
-
-.profile::before,
-.profile::after {
-    content: '';
-    position: absolute;
-    inset: -0.5rem;
-    z-index: -1;
-    background: conic-gradient(from var(--gradient-angle),
-            var(--clr-3),
-            var(--clr-4),
-            var(--clr-5),
-            var(--clr-4),
-            var(--clr-3));
-    border-radius: inherit;
-    animation: rotation 5s linear infinite;
-}
-
-.profile::after {
-    filter: blur(4.5rem);
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .description {
-    padding: 18px;
+    padding: 20px;
 }
 
 .avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    margin-bottom: 20px;
 }
 
 .name {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
-    color: white;
+    margin: 10px 0;
 }
 
 .tag,
 .location {
-    font-size: 14px;
-    color: rgb(184, 170, 170);
+    color: gray;
+    margin: 5px 0;
 }
 
 .stats {
+    list-style: none;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #f3f6f9;
+    padding: 0;
+    margin: 20px 0 0;
     border-top: 1px solid #e4e9f0;
-    list-style-type: none;
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
 }
 
-.li {
-    border: 2px solid darkgray;
+.stats li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    flex-basis: calc(100% / 3);
 }
 
 .label {
-    font-size: 12px;
-    color: grey;
+    color: gray;
+    font-size: 14px;
 }
 
 .quantity {
-    font-size: 14px;
     font-weight: bold;
-}
-
-.profile ul {
-    margin-bottom: 0px;
+    margin-top: 5px;
+    font-size: 18px;
 }
